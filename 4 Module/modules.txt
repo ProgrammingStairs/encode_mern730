@@ -87,8 +87,7 @@ node application.js
 what are External Modules
 ----------------------------------------------
 
-You can use the external or 3rd party modules only by downloading them via NPM. These modules are generally developed 
-by other developers and are free to use. Few of the best external modules are express, react, gulp, mongoose, mocha etc.
+You can use the external or 3rd party modules only by downloading them via NPM. These modules are generally developed by other developers and are free to use. Few of the best external modules are express, react, gulp, mongoose, mocha etc.
 
 Globally Loading the 3rd party modules:
 -------------------------------------------------------------------
