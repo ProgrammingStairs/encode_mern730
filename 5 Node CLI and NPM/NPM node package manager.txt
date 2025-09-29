@@ -199,7 +199,7 @@ what is package.json and why it is needed?
 application.
 Some Important Points to Rember : 
 --> package.json as the extension itself indicates  that the package.json is in JSON Format.
---> Defaulr Configuration File.
+--> Default Configuration File.
 --> We can also write directly but we can create it by commands.
 --> We can restore dependencies from package.json if node_module may deleted.
 )
@@ -287,31 +287,26 @@ license: The license to which the application confirms are mentioned in this key
 
 dependencies: The third party package or modules installed using npm are specified in this segment.
 
-devDependencies: The dependencies that are used only in the development part of the application are specified in this 
-                                     segment. These dependencies do not get rolled out when the application is in production stage.
+devDependencies: The dependencies that are used only in the development part of the application are specified in this segment. These dependencies do not get rolled out when the application is in production stage.
 
-repository: It contain the information about the type and url of the repository where the code of the application lives is 
-                       mentioned here in this segment.
+repository: It contain the information about the type and url of the repository where the code of the application lives is mentioned here in this segment.
 
 bugs: The url and email where the bugs in the application should be reported are mentioned in this segment.
 
-Note: Here, “body-parser”, “express”, “express-validator”, “mongoose” and “nodemon” are the modules/packages 
-            installed using npm (Node Package Manager).
+Note: Here, “body-parser”, “express”, “express-validator”, “mongoose” and “nodemon” are the modules/packages installed using npm (Node Package Manager).
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Creating a Node Project:
 ----------------------------------------
-To create a Node project, npm init is used in the folder in which user want to create project. The npm command line will 
-ask a number of questions like name, license, scripts, description, author, keywords, version, main file etc. After npm is done 
+To create a Node project, npm init is used in the folder in which user want to create project. The npm command line will ask a number of questions like name, license, scripts, description, author, keywords, version, main file etc. After npm is done 
 creating the project, a package.json file will be visible in project folder as a proof that the project has been initialized.
 
 npm init
 
 Installing Packages:
 
-After creating the project, next step is to incorporate the packages and modules to be used in the Node Project. To install 
-packages and modules in the project use the following syntax:
+After creating the project, next step is to incorporate the packages and modules to be used in the Node Project. To install packages and modules in the project use the following syntax:
 
 Syntax: npm install package_name
 
@@ -323,8 +318,7 @@ To use express in the Node, follow the below syntax:
 
 Syntax:var express = require('express');
 
-Example: To install a package globally (accessible by all projects in system), add an extra -g tag in syntax used to install the 
-package.Installing nodemon package globally.
+Example: To install a package globally (accessible by all projects in system), add an extra -g tag in syntax used to install the package.Installing nodemon package globally.
 
 npm install nodemon -g
 
@@ -349,14 +343,11 @@ Do you need the package.json? Yes.
 
 Can you have a project with only the package-lock.json? No.
 
-The package.json is used for more than dependencies - like defining project properties, description, author & license 
-information, scripts, etc. The package-lock.json is solely used to lock dependencies to a specific version number.
+The package.json is used for more than dependencies - like defining project properties, description, author & license information, scripts, etc. The package-lock.json is solely used to lock dependencies to a specific version number.
 
-package-lock.json: records the exact version of each installed package which allows you to re-install them. Future installs 
-will be able to build an identical dependency tree.
+package-lock.json: records the exact version of each installed package which allows you to re-install them. Future installs will be able to build an identical dependency tree.
 
-package.json: records the minimum version you app needs. If you update the versions of a particular package, the change is 
-not going to be reflected here.
+package.json: records the minimum version you app needs. If you update the versions of a particular package, the change is not going to be reflected here.
 
 [ NOTE  ] Hum package ko as a module bhi bol sakte he.
 nodemon global module he.
