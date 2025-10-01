@@ -1,6 +1,7 @@
-import Events from "events";
-class MyClass extends Events{}
-var eventEmitter = new MyClass();
+var events = require("events");
+// console.log(events);
+
+var eventEmitter = new events();
 
 eventEmitter.on("data",()=>{
     console.log("data event emits");
