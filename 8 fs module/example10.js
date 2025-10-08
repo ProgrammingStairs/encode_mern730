@@ -10,9 +10,7 @@ for(i=0;i<data.length;i++){
     if(data[i]=="\n"){
         name = data.slice(res,i);
         res = i+1;
-    }
-  console.log("Filename : "+name);
-
-    // console.log(fs.readFileSync(name,'utf-8'));
-    
+   console.log("Filename : "+name);    
+        console.log(fs.readFileSync(name,'utf-8'));
+      }
 }
