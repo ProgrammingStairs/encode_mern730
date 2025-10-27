@@ -3,6 +3,7 @@
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
+var qs = require("querystring");
 
 var instance = http.createServer((request,response)=>{
     response.writeHead(200,{'content-type':"text/html"});
@@ -11,21 +12,24 @@ var instance = http.createServer((request,response)=>{
     if(requestedURL.pathname=="/"){
         var data = fs.readFileSync("login.html");
         response.write(data);
-      //  response.end();
+        response.end();
     }
 
     else if(requestedURL.pathname=='/viewInfo'){
-        
-        var obj= requestedURL.query;
-                console.log("username : "+obj.username);
-
+        var chunkData='';
+        request.on('data',(chunk)=>{
+            chunkData+=chunk;
+        });
+        request.on('end',()=>{
+            var obj = qs.parse(chunkData);
         response.write("<br>Username : "+obj.username);
         response.write("<br>Email : "+obj.email);
         response.write("<br>Password : "+obj.password);
         response.write("<br>Address : "+obj.address);
-      //  response.end();
+          response.end();
+
+        });
     }
-    response.end();
 
 });
 
