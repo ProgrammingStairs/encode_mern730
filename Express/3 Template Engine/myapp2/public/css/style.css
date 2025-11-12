@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+* {
+    margin: 0px;
+    font-family: "Comic Relief", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#container {
+    height: auto;
+    width: 90%;
+    /* background-color: grey; */
+    margin: auto;
+}
+
+#header {
+    height: 60px;
+}
+
+#logoImg {
+    height: 60px;
+}
+
+#heading {
+    font-size: 30px;
+    position: absolute;
+    margin-top: 10px;
+    color:brown;
+}
+
+#nav {
+    height: 50px;
+    background-color: #C49102;
+    position: sticky;
+    top:0;
+    z-index: 1;
+    border-radius: 20px;
+}
+#nav ul{
+    list-style: none;
+    padding-top: 10px;
+}
+#nav ul li{
+    display: inline;
+}
+#nav ul li a{
+    text-decoration: none;
+    margin-left: 55px;
+    color:black;
+    font-size: 22px;
+    font-family: candara;
+}
+#nav ul li a:hover{
+    color:brown;
+}
+#nav ul li ul{
+    display: none;
+}
+#nav ul li:hover ul{
+    display: block;
+    position: absolute;
+    width: 160px;
+    margin-left: 260px;
+    background-color: #C49102;
+}
+#nav ul li ul li{
+    margin-left: -45px;
+    line-height: 50px;
+}
+#banner{
+    height:520px;
+    /* background-color: green; */
+}
+#bannerImg{
+    height: 100%;
+    width: 100%;
+}
+#mqdemo{
+    height: 40px;
+    padding: 5px;
+    background-color:  #C49102;
+    color: white;
+}
+#content{
+    height: 300px;
+    background-color: whitesmoke;
+    padding: 50px;
+    line-height: 28px;
+}
+#content p{
+    text-align: justify;
+}
+#box{
+    height: 460px;
+    background-color: beige;
+    padding: 30px;
+}
+#box h2{
+    color:brown;
+    margin-left: 10px;
+}
+#box1,#box2,#box3,#box4{
+    height: 385px;
+    width: 240px;
+    background-color: #C49102;
+    margin: 12px;
+    float: left;
+}
+#boxImage{
+    height: 200px;
+    width: 240px;
+}
+#box1 h3 ,#box2 h3 ,#box3 h3 ,#box4 h3 {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-weight: bold;
+    color:brown;
+}
+#box1 p ,#box2 p ,#box3 p ,#box4 p {
+    padding: 15px;
+    text-align: justify;
+    line-height: 26px;
+}
+#about{
+    height: 500px;
+    padding: 30px;
+    /* background-color: green; */
+}
+#about1{
+    height: 350px;
+    width: 350px;
+    /* background-color: crimson; */
+    margin: 20px;
+    float: left;
+    border-radius: 50%;
+}
+#aboutImage{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+}
+#about2{
+    height: 380px;
+    width: 600px;
+    /* background-color: crimson; */
+    margin: 20px;
+    float: left;
+    padding: 20px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+#contact{
+    height: 400px;
+    background-color: beige;
+    padding: 30px;
+}
+#contact1 , #contact2, #contact3{
+    height:280px;
+    background-color: tan;
+    width: 180px;
+    margin: 10px;
+    float: left;
+    padding: 20px;
+    line-height: 34px;
+}
+a, #contact3 span{
+    text-decoration: none;
+    color:brown;
+}
+#contact4{
+    height:320px;
+    /* background-color: tomato; */
+    width: 330px;
+    margin: 10px;
+    float: left;
+}
+#footer{
+    padding: 10px;
+}
+#section{
+    height:420px;
+    width:400px;
+    background-color: beige;
+    margin: auto;
+    margin-top: 50px;
+}
+button{
+    float: left;
+    height: 45px;
+    font-size: 16px;
+    width: 50%;
+    border-width: 0px;
+}
+#selectedOne{
+    background-color: #C49102;
+    color:white;
+}
+#selectedTwo{
+    background-color: lightgrey;
+    color:black;
+}
+#inpt{
+    height: 30px;
+    width: 300px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    background: transparent;
+    margin-left: 40px;
+    margin-top: 10px;
+    text-align: center;
+    outline: 0px;
+    border-bottom-color: black;
+    font-size: 16px;
+}
+
+#btn{
+    height: 35px;
+    width: 300px;
+    border-width: 0px;
+    margin-left: 43px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #C49102;
+    color:white;
+}
+#space{
+    padding: 40px;
+}
+#inpt:hover{
+    border-bottom-color: crimson;
+}
+#btn:hover{
+    background-color: black;
+    color:white;
+}
+#gallery{
+    height: 530px;
+}
+#galleryBox{
+    height: 380px;
+    width: 300px;
+    margin: 35px;
+    margin-top: 70px;
+    float: left;
+    overflow: hidden;
+}
+#gBox{
+    height: 380px;
+    width: 300px;
+}
+#gBox:hover{
+    transition: 0.5s;
+    /* transform: scale(1.1); */
+    transform: rotate(360deg);
+    border-radius: 50%;
+}

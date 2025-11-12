@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <blockquote>
+        <h2>Book Details</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptate vero mollitia veniam impedit quasi quis consequuntur laborum autem ut, incidunt odit ea magnam? Minima non ex modi rerum nisi, quis blanditiis facilis sint unde numquam placeat, accusamus voluptatum. Ipsam explicabo molestias dolor ea totam velit perspiciatis, voluptate iure inventore labore voluptatum? Distinctio non repudiandae officiis unde esse atque aspernatur.
+        </p>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <tr>
+                <th>S.No</th>
+                <th>BookName</th>
+                <th>BookAuthor</th>
+                <th>BookPrice</th>
+            </tr>
+            <% bookArray.forEach((book,index)=>{ %>
+                <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= book.bookName %></td>
+                    <td><%= book.bookAuthor %></td>
+                    <td><%= book.bookPrice %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </blockquote>
+</body>
+</html>
