@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Session Example</h2>
+    <%= message %>
+    <form action="/login" method="post">
+        <input
+            type="email"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+        > <br>
+        <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            id="password"
+            required
+        > <br>
+        <input
+            type="submit"
+            value="Login"
+        >
+        <input
+            type="reset"
+            value="Reset"
+        ><br>
+     </form>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/contact_css.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Gap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">
+                            <span class="glyphicon glyphicon-home" style="color: royalblue;"></span>
+                            Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="service.html">
+                            <span class="glyphicon glyphicon-list"></span>
+                            Services</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="glyphicon glyphicon-tags"></span>
+                            Product <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+
+
+                    <!-- modal starts -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Login Form</h4>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                                placeholder="Password">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Remember Me
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"
+                                            style="width: 100%;">Login</button>
+                                    </form>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal ends -->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span>
+                            Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="carousel-example-generic" style="margin-top: -20px;" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/banner.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/banner.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/banner.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="row jumbotron" style="padding: 50px;">
+        <h2>Welcome to GAP</h2>
+        <p align="justify" style="font-size: 2.2vw;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis accusantium, consectetur esse fuga cupiditate molestias ex illo assumenda doloribus necessitatibus natus ut architecto in unde aspernatur. Veniam quo odit sint rerum aliquam, quod, quas ipsam nostrum voluptate aspernatur porro numquam at nobis suscipit perspiciatis, provident deserunt ad ut itaque accusamus consequuntur quisquam. Assumenda, temporibus ratione nam repellat aperiam quam aliquid dolores? Itaque necessitatibus tempore temporibus perspiciatis repudiandae, nemo ad cumque, maxime, repellat reprehenderit autem. Sunt id odit est iusto, suscipit officiis. Alias praesentium suscipit dicta dolor repudiandae tenetur officia amet nihil. Veritatis dolor modi, eius ipsa repudiandae tempora dolorem veniam.</p>
+        <button class="btn btn-danger">Click to get More Details</button>
+        <button class="btn btn-primary">Click to get More Details</button>
+    </div>
+    <div style="padding: 40px 0px 0px 40px;">
+                <h2>Our Section</h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-11 col-sm-5 col-md-2 col-lg-2" style="margin: 4%;">
+            <img src="images/banner.jpg"  style="height: 25vh;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" alt="">
+            <p align="justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quibusdam iusto cum nesciunt voluptas consequuntur, aut omnis ducimus, at commodi sit incidunt accusantium possimus maiores. Consectetur necessitatibus quia labore ea?
+            </p>
+        </div>
+        <div class="col-xs-11 col-sm-5 col-md-2 col-lg-2 col-lg-offset-1" style="margin: 4%;">
+            <img src="images/banner.jpg"  style="height: 25vh;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" alt="">
+            <p align="justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quibusdam iusto cum nesciunt voluptas consequuntur, aut omnis ducimus, at commodi sit incidunt accusantium possimus maiores. Consectetur necessitatibus quia labore ea?
+            </p>
+        </div>
+        <div class="col-xs-11 col-sm-5 col-md-2 col-lg-2 col-lg-offset-1" style="margin: 4%;">
+            <img src="images/banner.jpg"  style="height: 25vh;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" alt="">
+            <p align="justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quibusdam iusto cum nesciunt voluptas consequuntur, aut omnis ducimus, at commodi sit incidunt accusantium possimus maiores. Consectetur necessitatibus quia labore ea?
+            </p>
+        </div>
+        <div class="col-xs-11 col-sm-5 col-md-2 col-lg-2 col-lg-offset-1" style="margin: 4%;">
+            <img src="images/banner.jpg"  style="height: 25vh;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" alt="">
+            <p align="justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quibusdam iusto cum nesciunt voluptas consequuntur, aut omnis ducimus, at commodi sit incidunt accusantium possimus maiores. Consectetur necessitatibus quia labore ea?
+            </p>
+        </div>
+</div>
+        <div class="row" style="padding: 40px;">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<section class="section gray-bg" id="contactus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                </div>
+            </div>
+        </div>
+        <div class="row flex-row-reverse">
+            <div class="col-md-7 col-lg-8 m-15px-tb">
+                <div class="contact-form">
+                     <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                        <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
+                        <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="name" type="text" placeholder="Full Name" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="email" type="text" placeholder="Email Address" class="form-control">  
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input id="subject" type="text" placeholder="Subject" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="send">
+                                    <a id="send_message" class="px-btn theme" href="#"><span>Contact Us</span> <i class="arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 m-15px-tb">
+                <div class="contact-name">
+                    <h5>Mail</h5>
+                    <p>info@domainname.com</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Visit My Studio</h5>
+                    <p>Warnwe Park Streetperrine, <br>FL 33157 New York City</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Phone</h5>
+                    <p>+01 123 654 8096</p>
+                </div>
+                <div class="social-share nav">
+                    <a class="dribbble" href="#">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a class="behance" href="#">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a class="linkedin" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+    
+</body>
+</html>
