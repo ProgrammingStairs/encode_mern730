@@ -27,6 +27,16 @@ app.post("/login",(request,response)=>{
     }
 });
 
+app.get("/logout",(request,response)=>{
+    request.session.email = null;
+    request.session.destroy((error)=>{
+        if(error)
+            console.log(error);
+        else
+            response.render("index.ejs",{message:"Logout Successfully"});
+    });
+});
+
 app.listen(process.env.PORT,()=>{
     console.log("connection established successfully");
 });
