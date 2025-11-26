@@ -4,14 +4,15 @@ import dotenv from 'dotenv';
 import userRouter from './router/userRouter.js';
 import {createDatabase} from './utils/utility.js';
 //import crypto from 'crypto';
+dotenv.config();
 createDatabase((status)=>{
     if(status){
-
+        console.log("success");
     }else{
-
+        console.log("------> ",status);
     }
 });
-dotenv.config();
+
 var app = express();
 app.set("views","views");
 app.set("view engine","ejs");

@@ -1,15 +1,17 @@
 import mysql from 'mysql2';
-
+import dotenv from 'dotenv';
+dotenv.config();
 var con = mysql.createConnection({
     host:process.env.HOST,
     user:process.env.USER,
-    password:process.env.PASSWORD,
-    port:process.env.PORT
+    password:process.env.PASSWORD
 });
 
-async function myFun(){
-    return new Promise((resolve,reject)=>{
+export default con;
 
-    });
-}
-export default await myFun();
+// async function myFun(){
+//     return new Promise((resolve,reject)=>{
+
+//     });
+// }
+// export default await myFun();
