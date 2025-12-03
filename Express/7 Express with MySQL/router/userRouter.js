@@ -1,17 +1,25 @@
 import express from 'express';
-import { addUserController } from '../controller/userController.js';
+import { addUserController,userLoginController,addToDoController } from '../controller/userController.js';
 var userRouter = express.Router();
 
 userRouter.get("/",(request,response)=>{
     response.render("index.ejs");
 });
 userRouter.get("/login",(request,response)=>{
-    response.render("login.ejs");
+    response.render("login.ejs",{message:""});
 });
 userRouter.get("/register",(request,response)=>{
-    response.render("register.ejs");
+    response.render("register.ejs",{message:""});
+});
+userRouter.get("/home",(request,response)=>{
+    response.render("profile.ejs",{message:"",email:request.session.email});
+});
+userRouter.get("/addToDo",(request,response)=>{
+    response.render("addToDo.ejs",{message:"",email:request.session.email});
 });
 
 userRouter.post("/addUser",addUserController);
+userRouter.post("/login",userLoginController);
+userRouter.post("/addToDo",addToDoController);
 
 export default userRouter;
