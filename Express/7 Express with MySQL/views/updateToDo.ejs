@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <blockquote>
+        <h2>Example of MYSQL with ExpressJs  </h2>
+        <%- include('./profileHeader.ejs') %>
+        <%=message%>
+        <h3>Update ToDo</h3>
+        <form action="/user/updateToDo" method="post">
+            <input type="text" placeholder="Enter Category" id="category" name="category"> <br>
+            <textarea placeholder="Enter Description" cols="21" id="description" name="description"></textarea> <br>
+            <select name="priority" id="priority">
+                <option value="">Select Priority</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="Average">Average</option>
+                <option value="High">High</option>
+                <option value="Extreme">Extreme</option>
+            </select> <br> <br>
+            <input type="submit"  value = "UpdateToDo" >
+            <input type="reset" value="Clear Data"><br>
+
+        </form>
+    </blockquote>
+</body>
+</html>

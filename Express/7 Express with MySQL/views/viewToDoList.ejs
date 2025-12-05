@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <blockquote>
+       <h2>Example of MYSQL with ExpressJs  </h2>
+      <%- include('./profileHeader.ejs')%>
+      <h2>ToDoList</h2>
+      <h4><%=message%></h4>
+      <table border="1" cellspacing="0" cellpadding="8">
+        <tr>
+            <th>ToDoId</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>CreatedAt</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <%result.forEach((obj,index)=>{ %>
+                <tr>
+                    <td><%=obj.todoid%></td>
+                    <td><%=obj.category%></td>
+                    <td><%=obj.description%></td>
+                    <td><%=obj.priority%></td>
+                    <td><%=(obj.created_at).toLocaleDateString()%><br><%=(obj.created_at).toLocaleTimeString()%></td>
+                    <td><button>Update</button></td>
+                    <td>
+                        <form action="/user/deleteToDo/<%=obj.todoid%>">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+        <%})%>
+    </table>  
+    </blockquote>
+</body>
+</html>

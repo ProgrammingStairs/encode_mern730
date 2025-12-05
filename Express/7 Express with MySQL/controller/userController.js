@@ -46,3 +46,39 @@ export const addToDoController = (request,response)=>{
         }
     });
 }
+
+export const viewToDoController = (request,response)=>{
+    const query = "select * from todo where email=?";
+    const value = [request.session.email];
+    con.query(query,value,(error,result)=>{
+        if(error)
+            console.log("Error while fetching todo list : ",error);
+        else{
+            console.log(result);
+            response.render("viewToDoList.ejs",{message:"",email:request.session.email,result});
+        }
+    });
+}
+
+export const deleteToDoController = (request,response)=>{
+    const todoid = request.params.todoid;
+    // console.log(todoid);
+    const query = "delete from todo where todoid = ?";
+    const value = [todoid];
+    con.query(query,value,(error,result)=>{
+        if(error)
+            console.log("Error while deleting todo task : ",error);
+        else{
+            const query = "select * from todo where email=?";
+            const value = [request.session.email];
+            con.query(query,value,(error,result)=>{
+                if(error)
+                    console.log("Error while fetching todo list : ",error);
+                else{
+                    console.log(result);
+                    response.render("viewToDoList.ejs",{message:"Task deleted successfully",email:request.session.email,result});
+                }
+            });
+        }
+    });
+}
