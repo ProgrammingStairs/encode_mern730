@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
 </head>
 <body>
      <blockquote>
@@ -27,7 +32,12 @@
                     <td><%=obj.description%></td>
                     <td><%=obj.priority%></td>
                     <td><%=(obj.created_at).toLocaleDateString()%><br><%=(obj.created_at).toLocaleTimeString()%></td>
-                    <td><button>Update</button></td>
+                    <td>
+                        <form action="/user/updateToDo" method="post">
+                            <input type="hidden" value="<%=JSON.stringify(obj)%>" name="updateObj" id="updateObj">
+                            <button>Update</button>
+                        </form>
+                    </td>
                     <td>
                         <form action="/user/deleteToDo/<%=obj.todoid%>">
                             <button>Delete</button>

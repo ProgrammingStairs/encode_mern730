@@ -19,6 +19,11 @@ app.set("view engine","ejs");
 // var secret = crypto.randomBytes(32).toString('hex');
 // console.log(secret);
 
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    next();
+  });
+  
 app.use(expressSession({secret:process.env.SECRET,resave:true,saveUninitialized:true}));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());

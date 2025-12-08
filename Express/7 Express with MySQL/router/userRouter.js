@@ -1,5 +1,5 @@
 import express from 'express';
-import { addUserController,userLoginController,addToDoController,viewToDoController,deleteToDoController } from '../controller/userController.js';
+import { addUserController,userLoginController,addToDoController,viewToDoController,deleteToDoController,updateToDoController,updateToDoDataController,logoutController } from '../controller/userController.js';
 var userRouter = express.Router();
 
 userRouter.get("/",(request,response)=>{
@@ -23,5 +23,7 @@ userRouter.post("/login",userLoginController);
 userRouter.post("/addToDo",addToDoController);
 userRouter.get("/viewToDo",viewToDoController);
 userRouter.get("/deleteToDo/:todoid",deleteToDoController);
-
+userRouter.post("/updateToDo",updateToDoController);
+userRouter.post("/updateToDoData",updateToDoDataController);
+userRouter.get("/logout",logoutController);
 export default userRouter;

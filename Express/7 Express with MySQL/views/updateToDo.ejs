@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
 </head>
 <body>
     <blockquote>
@@ -11,11 +16,14 @@
         <%- include('./profileHeader.ejs') %>
         <%=message%>
         <h3>Update ToDo</h3>
-        <form action="/user/updateToDo" method="post">
-            <input type="text" placeholder="Enter Category" id="category" name="category"> <br>
-            <textarea placeholder="Enter Description" cols="21" id="description" name="description"></textarea> <br>
+        <form action="/user/updateToDoData" method="post">
+            <input type="hidden" value="<%=todoObj.todoid%>" id="todoid" name="todoid"> <br>
+            <input type="text" value="<%=todoObj.category%>" placeholder="Enter Category" id="category" name="category"> <br>
+            <textarea placeholder="Enter Description" cols="21" id="description" name="description">
+                <%=todoObj.description%>
+            </textarea> <br>
             <select name="priority" id="priority">
-                <option value="">Select Priority</option>
+                <option value="<%=todoObj.priority%>"><%=todoObj.priority%></option>
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="Average">Average</option>
