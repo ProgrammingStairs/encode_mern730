@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Example of Sequelize</h2>
+    <hr>
+    <a href="/">Home</a>    |   
+    <a href="/student/addStudent">Add Student</a>   |
+     <a href="/student/loginStudent">Login Student</a>   |   
+   
+    <hr>
+    <blockquote>
+        <p>
+            <h2>Login Student</h2>
+            <%=message%>
+            <form action="/student/loginStudent" method="post">
+                <input
+                    type="email"
+                    placeholder="Enter Email"
+                    id="email"
+                    name="email"
+                    required
+                > <br>
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    id="password"
+                    name="password"
+                    required
+                > <br>
+                <input
+                    type="submit"
+                    value="Login"
+                >
+                 <input
+                    type="reset"
+                    value="Reset"
+                >
+                <br>
+            </form>
+        </p>
+    </blockquote>    
+</body>
+</html>

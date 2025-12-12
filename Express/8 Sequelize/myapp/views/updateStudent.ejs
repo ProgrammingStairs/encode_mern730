@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Example of Sequelize</h2>
+    <hr>
+    <span>Welcome <%=email%></span> |   
+    <a href="/student/home">Home</a>    |   
+    <a href="/student/updateStudentDetails/<%=email%>">Update Student</a>   |   
+    <a href="/student/deActivateStudent/<%=email%>">DeActivate Student</a>   |   
+    
+    <hr>
+    <blockquote>
+    
+        <p>
+            <h2>Update Student</h2>
+            <%=message%>
+            <form action="/student/updateStudent" method="post">
+                <input
+                    type="text"
+                    placeholder="Enter name"
+                    id="name"
+                    name="name"
+                    required
+                > <br>
+                <input
+                    type="email"
+                    placeholder="Enter Email"
+                    id="email"
+                    name="email"
+                    required
+                > <br>
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    id="password"
+                    name="password"
+                    required
+                > <br>
+                <input
+                    type="text"
+                    placeholder="Enter Address"
+                    id="address"
+                    name="address"
+                    required
+                > <br>
+                <input
+                    type="submit"
+                    value="Update"
+                >
+                 <input
+                    type="reset"
+                    value="Reset"
+                >
+                <br>
+            </form>
+        </p>
+    </blockquote>    
+</body>
+</html>

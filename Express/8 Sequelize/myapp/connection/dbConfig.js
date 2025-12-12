@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-const sequelize = Sequelize(
+const sequelize = new Sequelize(
     'seq_mern730',
     'root',
     'root',
