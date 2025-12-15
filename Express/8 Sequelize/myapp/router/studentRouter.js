@@ -1,5 +1,5 @@
 import express from 'express';
-import { addStudentController,loginStudentController,deActivateStudentController,updateStudentDetailsController } from '../controller/studentController.js';
+import { addStudentController,loginStudentController,deActivateStudentController,updateStudentDetailsController,updateStudentController,logoutController } from '../controller/studentController.js';
 var studentRouter = express.Router();
 
 studentRouter.get("/addStudent",(request,response)=>{
@@ -19,5 +19,6 @@ studentRouter.post("/addStudent",addStudentController);
 studentRouter.post("/loginStudent",loginStudentController);
 studentRouter.get("/deActivateStudent/:email",deActivateStudentController);
 studentRouter.get("/updateStudentDetails/:email",updateStudentDetailsController);
-
+studentRouter.post("/updateStudent",updateStudentController);
+studentRouter.get("/logout",logoutController);
 export default studentRouter;

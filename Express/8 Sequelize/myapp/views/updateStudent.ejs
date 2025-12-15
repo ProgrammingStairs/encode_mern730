@@ -12,7 +12,7 @@
     <a href="/student/home">Home</a>    |   
     <a href="/student/updateStudentDetails/<%=email%>">Update Student</a>   |   
     <a href="/student/deActivateStudent/<%=email%>">DeActivate Student</a>   |   
-    
+    <a href="/student/logout">Logout</a>
     <hr>
     <blockquote>
     
@@ -26,6 +26,7 @@
                     id="name"
                     name="name"
                     required
+                    value="<%=studentObj.name%>"
                 > <br>
                 <input
                     type="email"
@@ -33,13 +34,16 @@
                     id="email"
                     name="email"
                     required
+                    readonly
+                    value="<%=studentObj.email%>"
                 > <br>
                 <input
-                    type="password"
+                    type="text"
                     placeholder="Enter Password"
                     id="password"
                     name="password"
                     required
+                    value="<%=studentObj.password%>"
                 > <br>
                 <input
                     type="text"
@@ -47,6 +51,7 @@
                     id="address"
                     name="address"
                     required
+                    value="<%=studentObj.address%>"
                 > <br>
                 <input
                     type="submit"

@@ -57,9 +57,47 @@ export const deActivateStudentController = async (request,response)=>{
 export const updateStudentDetailsController = async(request,response)=>{
     try{
         const email = request.params.email;
-        console.log("received email : ",email);
-        
+        // console.log("received email : ",email);
+        var studentObj = await student.findOne({
+            where:{
+                email:email
+            }
+        });
+        response.render("updateStudent.ejs",{message:"",email:request.session.email,studentObj});
     }catch(error){
         console.log("error in updateStudentDetailsController : ",error);   
+    }
+}
+
+export const updateStudentController = async (request,response)=>{
+    try{
+        const result = await student.update({
+            name:request.body.name,
+            password:request.body.password,
+            address: request.body.address
+        },{
+            where:{
+                email:request.body.email
+            }
+        });
+        //console.log(result);
+       response.render("studentProfile.ejs",{message:"Profile Updated successfully",email:request.session.email});
+             
+    }catch(error){
+        console.log("Error : ",error);
+    }
+}
+
+export const logoutController = async (request,response)=>{
+    try{
+        request.session.email=null;
+        request.session.destroy((error)=>{
+            if(error)
+                console.log("Error : "+error);
+            else 
+                response.render("loginStudent.ejs",{message:"Logout successfully"});             
+        });
+    }catch(error){
+        console.log("Error : ",error);
     }
 }
