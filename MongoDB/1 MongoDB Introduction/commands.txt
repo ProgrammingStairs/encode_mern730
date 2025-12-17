@@ -1,0 +1,114 @@
+Commands
+---------
+1. show dbs; 
+2. use mern730;
+3. db;
+4. db.dropDatabase();
+5. db.createCollection("Employee_123");
+6. db.createCollection("Employee_12345");
+7. db.Employee_12345.drop();
+8. db.Employee_123.drop();
+9. db.createCollection("Employee");
+10. db.Employee.insert({
+    name:"Andrew Anderson",
+    age: 67,
+    address : "indore",
+    salary : 89000
+});
+11. db.Employee.insertOne({
+    name:"Peter Parker",
+    age: 23,
+    address : "indore",
+    salary : 32000
+}); 
+12. db.Employee.insertMany([
+    {
+    name:"Jack",
+    age: 12,
+    address : "indore",
+    salary : 12000
+},{
+    name:"Kimpson",
+    age: 56,
+    address : "bhopal",
+    salary : 3200
+},{
+    name:"Vinay",
+    age: 45,
+    address : "usa",
+    salary : 99000
+},{
+    name:"Mathew Parker",
+    age: 54,
+    address : "indore",
+    salary : 39000
+}
+]); 
+
+13. db.Employee.bulkWrite([{
+    insertOne:{
+        name:"Pearson Parker",
+        age: 29,
+        address : "indore",
+        salary : 43234
+    }
+}]); 
+
+14. db.Employee.bulkWrite([{
+    insertOne:{
+        name:"Vijay Nandan",
+        age: 87,
+        address : "ujjain",
+        salary : 45000
+    }
+},{
+    insertOne:{
+        name:"Anuj Raj",
+        age: 43,
+        address : "indore",
+        salary : 63234
+    }
+},{
+    insertOne:{
+        name:"Vinit ",
+        age: 32,
+        address : "bhopal",
+        salary : 50000
+    }
+}]); 
+
+15. db.Employee.find();
+16. db.Employee.update({
+    name : "Vinit "
+},{
+    $set:{
+        address : "Bhopal MP"
+    }
+})
+17. db.Employee.update({},{
+    $set:{
+        state : "Madhya Pradesh"
+    }
+})
+18. db.Employee.update({},{
+    $set:{
+        state : "Madhya Pradesh"
+    }
+},{multi:true});
+
+19. db.Employee.updateMany({},{
+    $set:{
+        pincode : 452010
+    }
+})
+20. db.Employee.update({},{
+    $unset:{
+        pincode : ""
+    }
+})
+
+21. db.Employee.updateMany({},{
+    $unset:{
+        pincode : ""
+    }
+})
