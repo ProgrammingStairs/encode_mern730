@@ -112,3 +112,102 @@ Commands
         pincode : ""
     }
 })
+    db.Employee.find(<SELECTION_CRITERIA>);
+
+22. db.Employee.find({name:"Andrew Anderson"});
+23. db.Employee.find({name:"Andrew Anderson",salary:50000});
+24. db.Employee.find({name:"Andrew Anderson",salary:78000}).toArray()[0].name;
+25. db.Employee.deleteOne({name:"Andrew Anderson",salary:78000});
+26. db.Employee.remove({name:"Peter Parker"});
+27. db.Employee.findOneAndDelete({name:"Mathew Math"});
+28. db.Employee.find().count();
+29. db.Employee.find().limit(3);
+30. db.Employee.find().skip(2);
+31. db.Employee.find({salary:{$eq:50000}});
+32. db.Employee.find({salary:{$lt:50000}});
+33. db.Employee.find({salary:{$lte:50000}});
+34. db.Employee.find({salary:{$gt:50000}});
+35. db.Employee.find({salary:{$gte:50000}});
+36. db.Employee.find({salary:{$ne:50000}});
+37. db.Employee.find({salary:{$in:[50000]}});
+38. db.Employee.find({salary:{$in:[50000,99000]}});
+39. db.Employee.find({salary:{$nin:[50000]}});
+40. db.Employee.find({salary:{$nin:[50000]}}).count();
+41. db.Employee.find({
+    $and : [
+        {
+            age:45
+        },{
+            salary:99000
+        }
+    ]
+});
+42. db.Employee.find({
+    $or : [
+        {
+            age:45
+        },{
+            salary:99000
+        }
+    ]
+});
+43. db.Employee.find({
+    $or : [
+        {
+            age:{
+                $lt:50
+            }
+        },{
+            salary:{
+                $gt:50000
+            }
+        }
+    ]
+});
+
+44. db.Employee.find({
+    $and : [
+        {
+            age:{
+                $lt:50
+            }
+        },{
+            salary:{
+                $gt:50000
+            }
+        }
+    ]
+});
+45. db.Employee.find({
+    $and : [
+        {
+            age:{
+                $gt:50
+            }
+        },{
+            $or:[
+                {
+                    address: "indore"
+                },{
+                    salary: {
+                        $in : [99000,23000]
+                    }
+                }
+            ]
+        }
+    ]
+});
+
+    db.Employee.find(<SELECTION_CRITERIA>,<PROJECTION>);
+46. db.Employee.find({},{name:1});
+47. db.Employee.find({},{name:1,_id:0});
+48. db.Employee.find({},{name:1,_id:0,salary:1});
+49. db.Employee.find({},{name:1,_id:0,salary:1}).sort({salary:1});
+50. db.Employee.find({},{name:1,_id:0,salary:1}).sort({salary:-1});
+51. db.Employee.find({},{name:1,_id:0,salary:1}).sort({name:1});
+52. db.Employee.find({},{name:1,_id:0,salary:1}).sort({name:-1});
+53. db.Employee.find({},{name:1,_id:0,salary:1}).sort({address:1});
+54. db.Employee.find({},{name:1,_id:0,salary:1}).sort({address:-1});
+55. db.Employee.find({},{name:1,_id:0,salary:1,address:1}).sort({address:1,salary:1});
+56. db.Employee.find({},{name:1,_id:0,salary:1,address:1}).sort({address:1,salary:-1});
+57. db.Employee.find().sort({salary:-1}).toArray()[0].salary;
