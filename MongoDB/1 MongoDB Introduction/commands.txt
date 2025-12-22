@@ -211,3 +211,126 @@ Commands
 55. db.Employee.find({},{name:1,_id:0,salary:1,address:1}).sort({address:1,salary:1});
 56. db.Employee.find({},{name:1,_id:0,salary:1,address:1}).sort({address:1,salary:-1});
 57. db.Employee.find().sort({salary:-1}).toArray()[0].salary;
+58. db.Employee.find({},{name:1,_id:0}).sort({salary:-1}).toArray()[0];
+59. db.Employee.find({
+    salary : {
+        $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+    }
+},{name:1,_id:0,salary:1}).sort({salary:-1}).toArray()[0];
+60. db.Employee.find({
+    salary : {
+        $lt : db.Employee.find({
+            salary : {
+                $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+            }
+        }).sort({salary:-1}).toArray()[0].salary
+    }
+},{name:1,_id:0,salary:1}).sort({salary:-1}).toArray()[0];
+
+61. db.Employee.aggregate([{
+    $group:{
+        _id:""
+    }
+}]);
+
+62. db.Employee.aggregate([{
+    $group:{
+        _id:"$name"
+    }
+}]);
+63. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        total_entries : {$sum:1}
+    }
+}]);
+64. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        minSalary : {$min:"$salary"}
+    }
+}]);
+65. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        maxSalary : {$max:"$salary"}
+    }
+}]);
+66. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        avgSalary : {$avg:"$salary"}
+    }
+}]);
+67. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        sumSalary : {$sum:"$salary"}
+    }
+}]);
+
+68. db.Employee.aggregate([{
+    $group:{
+        _id:"$name"
+    }
+},{
+    $project:{
+        name : "$_id"
+    }
+}]);
+
+69. db.Employee.aggregate([
+  {
+    $group: {
+      _id: "$salary",
+      name: { $first: "$name" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      salary: "$_id",
+      name: 1
+    }
+  }
+])
+
+70. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+    }
+}]);
+
+71.  db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+    }
+},{$limit:3}]);
+
+72. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+    }
+},{$skip:3}]);
+
+73. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+    }
+},{$count:"salary"}]);
+
+74.db.Employee.aggregate([
+  {
+    $match: {
+      salary: { $gt: 30000 }
+    }
+  },
+  {
+    $group: {
+      _id: "$name"
+    }
+  }
+])
+
+75.  db.Employee.insertOne({name:"shirts",sizes:["small","medium","large"]});
+ db.Employee.aggregate([{$unwind:"$sizes"}]);
