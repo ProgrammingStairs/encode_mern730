@@ -334,3 +334,53 @@ Commands
 
 75.  db.Employee.insertOne({name:"shirts",sizes:["small","medium","large"]});
  db.Employee.aggregate([{$unwind:"$sizes"}]);
+
+ 76. db.createCollection("Product");
+ db.createCollection("Category");
+ db.Product.insertMany([{
+    name:"Soap",
+    price:120,
+    category_id:101
+ },{
+    name:"Fairness Cream",
+    price:520.67,
+    category_id:102
+ },{
+    name:"Fan",
+    price:1200,
+    category_id:103
+ },{
+    name:"Table",
+    price:15620,
+    category_id:104
+ }]);
+
+ db.Category.insertMany([{
+    name:"Cosmatics",
+    cat_id:101
+ },{
+    name:"Cosmatics",
+    cat_id:102
+ },{
+    name:"Electronics",
+    cat_id:103
+ },{
+    name:"Furniture",
+    cat_id:104
+ }]);
+
+ db.Product.aggregate([{
+    $lookup:{
+        from:"Category",
+        foreignField:"cat_id",
+        localField:"category_id",
+        as:"Product Details"
+    }
+ }]);
+
+ 77. db.Employee.getIndexes();
+ db.Employee.createIndex({address:1});
+ db.Employee.insertOne({name:"testing",expireAtTime : new Date()});
+ db.Employee.find().count();
+ db.Employee.createIndex({expireAtTime:1},{expireAfterSeconds:20});
+ 
