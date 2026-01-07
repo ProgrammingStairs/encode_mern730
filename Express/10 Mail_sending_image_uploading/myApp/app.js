@@ -13,10 +13,10 @@ app.get("/",(request,response)=>{
     response.render("index.ejs");
 });
 app.get("/login",(request,response)=>{
-    response.render("login.ejs");
+    response.render("login.ejs",{message:""});
 });
 app.get("/registration",(request,response)=>{
-    response.render("registration.ejs");
+    response.render("registration.ejs",{message:""});
 });
 
 app.use("/user",userRouter);

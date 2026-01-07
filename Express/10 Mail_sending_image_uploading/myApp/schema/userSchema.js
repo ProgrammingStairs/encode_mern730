@@ -4,7 +4,7 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    _id:{
+    email:{
         type:String,
         required:true
     },
@@ -12,14 +12,14 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    gender:{
+    address:{
         type:String,
         required:true
     },
-    hobbies : {
-        type:[String],
-        required:true
+    emailVerify:{
+        type:Boolean,
+        default:false
     }
 });
 
-export default mongoose.model('userSchema',userSchema,'user');
+export default mongoose.model('userSchema',userSchema,'userMail');

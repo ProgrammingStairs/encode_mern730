@@ -1,65 +1,31 @@
 import userSchema from "../schema/userSchema.js";
-
-export const findAllController = async(request,response)=>{
-    try{
-        var result = await userSchema.find();
-        response.status(200).json({message:"User List",userList:result});
-    }catch(error){
-        console.log("Error in FindAllController : ",error);
-        response.status(500).json({message:"Error Occured"});
-    }
-}
-
-export const findByIdController = async(request,response)=>{
-    try{
-        var _id = request.params._id;
-        var result = await userSchema.find({_id});
-        response.status(200).json({message:"User Found",user:result});
-    }catch(error){
-        console.log("Error in FindByIdController : ",error);
-        response.status(500).json({message:"Error Occured"});        
-    }
-}
-
+import mailer from "./mailer.js";
 export const saveController = async(request,response)=>{
     try{
-        var result = await userSchema.create(request.body);
-        response.status(201).json({message:"User Added",user:result});      
+        mailer.mailer(request.body.email,async (value)=>{
+            if(value){
+                var result = await userSchema.create(request.body);
+                console.log("User Added Successfully : ",result);
+                response.render("login.ejs",{message:"Mail Sent Please Verify"});      
+
+            }else{
+                console.log("Something went wrong in sending mail");
+                response.render("registration.ejs",{message:"Something went wrong in sending mail | please try again"});
+            }
+        });
+
     }catch(error){
         console.log("Error in saveController : ",error);
         response.status(500).json({message:"Error Occured"});
     }
 }
 
-export const updateController = async(request,response)=>{
+export const verifyEmailController = async(request,response)=>{
     try{
-        var _id = request.params._id;
-        var update = {
-            $set : {
-                username : request.body.username,
-                password: request.body.password,
-                gender:request.body.gender,
-                hobbies : request.body.hobbies
-            }
-        }
-        var res = await userSchema.updateOne({_id},update);
-        console.log("Data updated successfully");
-        response.status(200).json({message:"Data updated successfully"});
+        var email = request.body.email;
+        console.log("received email : ",email);
         
     }catch(error){
-        console.log("Error in updateController : ",error);
-        response.status(500).json({message:"Error Occured"});
-    }
-}
-
-export const deleteController = async(request,response)=>{
-    try{
-        var _id = request.params._id;
-        var res = await userSchema.deleteOne({_id});
-        console.log("data deleted successfully");
-        response.status(200).json({message:"Data Deleted Successfully"});
-    }catch(error){
-        console.log("Error in deleteController : ",error);
-        response.status(500).json({message:"Error Occured"});        
+        console.log("Errro while verify email : ",error);        
     }
 }

@@ -9,8 +9,9 @@
         <blockquote>
             <%- include('./profileHeader.ejs')%>
             <h3>RegistrationForm</h3>
+            <h2><%=message%></h2>
             <p>
-                <form action="">
+                <form action="/user/addUser" method="post">
                     <input
                         type="text"
                         name="username"
