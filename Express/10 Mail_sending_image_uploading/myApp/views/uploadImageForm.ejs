@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <blockquote>
+            <%- include('./profileHeaderNew.ejs')%>
+            <h3>Welcome <%=email%></h3>
+            <h2>Upload Image Form</h2>
+            <h3><%=message%></h3>
+            <form action="/user/uploadFormData" method="post" enctype="multipart/form-data">
+                <textarea 
+                    rows="3" cols="25"
+                    placeholder="Enter Description"
+                    name="desc"
+                    id="desc"
+                    required    
+                ></textarea> <br>
+                <input 
+                    type="file"
+                    name="profile"
+                    id="profile"
+                    required    
+                > <br>
+                <input 
+                    type="submit"
+                    value="UploadImage"
+                >
+            </form>
+        </blockquote>
+</body>
+</html>

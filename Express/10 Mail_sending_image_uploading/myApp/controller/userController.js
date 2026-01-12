@@ -1,5 +1,12 @@
 import userSchema from "../schema/userSchema.js";
 import mailer from "./mailer.js";
+import uuid from 'uuid4';
+import path from 'path';
+import { fileURLToPath } from "url";
+import imageSchema from "../schema/imageSchema.js";
+const __fileName = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__fileName);
+
 export const saveController = async(request,response)=>{
     try{
         var obj = await userSchema.findOne({email:request.body.email});
@@ -63,13 +70,48 @@ export const loginController = async(request,response)=>{
         }
         var result = await userSchema.findOne(status);
         console.log("Result : ",result);
-        // if(result.modifiedCount==1){
-        //     response.render("login.ejs",{message:"Email Verified Successfully | Now you can Login"});
-        // }else{
-        //     response.render("login.ejs",{message:"Email Already Verified"});
-        // }
+        if(result){
+            request.session.email = email;
+            request.session.save();
+            response.render("profile.ejs",{email:request.session.email});
+        }else{
+            response.render("login.ejs",{message:"Credential Not matched"});
+        }
         
     }catch(error){
         console.log("Errro while login : ",error);        
+    }
+}
+
+export const uploadFormDataController = async(request,response)=>{
+    try{
+        var filename = request.files.profile;
+        console.log("filename : ",filename);
+        
+        var fileName = new Date().getTime()+filename.name;
+        var pathName = path.join(__dirname.replace("\\controller","")+'/public/images/'+fileName);
+        filename.mv(pathName,async(error)=>{
+            if(error){
+                console.log("Error while uploading file : ",error);
+            }else{
+                request.body._id = uuid();
+                request.body.profile = fileName;
+                request.body.email = request.session.email;
+                const result = await imageSchema.create(request.body);
+                console.log("Result : ",result);
+                console.log("Image uploaded successfully");
+                response.render("uploadImageForm.ejs",{message:"File Uploaded Successfully",email:request.session.email});
+            }
+        });
+    }catch(error){
+        console.log("Error while dealing with uploadFormDataController : ",error);        
+    }
+}
+export const viewImagesController = async(request,response)=>{
+    try{
+        const result = await imageSchema.find();
+        response.render("viewImages.ejs",{email:request.session.email,result});
+    }catch(error){
+        console.log("error in viewImagesController : ",error);
     }
 }
