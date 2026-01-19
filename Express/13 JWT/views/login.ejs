@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h2>Example of JWT</h2></center>
+    <hr width="400">
+        <a href="/">Home</a> |
+        <a href="/user/login">Login</a> |
+        <a href="/user/register">Register</a> 
+    <hr width="400">
+    <h2>Login</h2>
+    <%=message%>
+    <form action="/login" method="post">
+        <input 
+            type="email"
+            placeholder="Enter Email"
+            id="email"
+            name="email"
+            required
+        > <br>
+        <input 
+            type="password"
+            placeholder="Enter Password"
+            id="password"
+            name="password"
+            required
+        > <br>
+        <input 
+            type="submit"
+            value="Login"
+        ><input 
+            type="reset"
+            value="Reset"
+        >
+         <br>
+    </form>
+</body>
+</html>

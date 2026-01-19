@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <blockquote>
+            <%- include('./profileHeaderNew.ejs')%>
+            <h3>Welcome <%=email%></h3>
+            <h2>List</h2>
+            <table border="1" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th>S.No</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th>UploadedAt</th>
+                    <th>UploadedOn</th>
+                    <th>Image</th>
+                </tr>
+                    <% result.forEach((obj)=>{ %>
+                        <tr>
+                            <td><%=obj._id%></td>
+                            <td><%=obj.email%></td>
+                            <td><%=obj.desc%></td>
+                            <td><%=obj.uploadedAt%></td>
+                            <td><%=obj.uploadedOn%></td>
+                            <td>
+                                <% obj.profile.forEach((obj)=>{%>
+                                    <img src="/images/<%=obj%>" alt="image" height="80" width="120">
+                                <%}) %>
+                                <% obj.profileOne.forEach((obj)=>{%>
+                                <img src="/images/<%=obj%>" alt="image" height="80" width="120">
+                                <%}) %>
+                            </td>
+                        </tr>
+                    <% }) %>
+            </table>
+        </blockquote>
+</body>
+</html>
