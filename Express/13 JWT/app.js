@@ -7,6 +7,10 @@ import { url } from './connection/dbConfig.js';
 mongoose.connect(url);
 dotenv.config();
 var app = express();
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
 app.use(cookieParser());
 app.set("views","views");
 app.set("view engine","ejs");
