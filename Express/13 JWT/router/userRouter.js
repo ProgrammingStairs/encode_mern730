@@ -12,13 +12,16 @@ const authenticateJWT = async(request,response,next)=>{
         if(!token){
             response.render("login.ejs",{message:"Token not found"});
         }
-        jwt.verify(token,USER_SECRET_KEY,(error,payload)=>{
-            if(error){
-               response.render("login.ejs",{message:"Error while verifying token"});        
-            }
-            request.payload = payload;
-            next();
-        });
+        else{
+            jwt.verify(token,USER_SECRET_KEY,(error,payload)=>{
+                if(error){
+                response.render("login.ejs",{message:"Error while verifying token"});        
+                }else{
+                    request.payload = payload;
+                    next();
+                }
+            });
+        }
     }catch(error){
         console.log("Error : ",error);
         response.render("login.ejs",{message:"Something Went Wrong"});
@@ -31,6 +34,7 @@ const authorizeJWT = async(request,response,next)=>{
         }else{
             response.render("anonymous_profile.ejs",{message:"Welcome anonymous user"});        
         }
+        next();
     }catch(error){
        console.log("Error : ",error);
         response.render("login.ejs",{message:"Something Went Wrong"});

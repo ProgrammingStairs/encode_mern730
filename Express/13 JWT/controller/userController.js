@@ -22,10 +22,16 @@ export const loginController = async(request,response)=>{
                 expiresIn:'1d'
             }
             const token = jwt.sign(request.body,USER_SECRET_KEY,expiryTime);
-            response.cookie("user_token",token,{httpOnly:true,expires:60*60*24*365});
+            response.cookie("user_token",token,{httpOnly:true,maxAge:60*60*24*365});
             response.redirect("/user/profile");
         }else{
-            response.render("login.ejs",{message:"Invalid credentials"});
+            request.body.role = "Anonymous";
+            const expiryTime = {
+                expiresIn:'1d'
+            }
+            const token = jwt.sign(request.body,USER_SECRET_KEY,expiryTime);
+            response.cookie("user_token",token,{httpOnly:true,maxAge:60*60*24*365});
+            response.redirect("/user/profile");        
         }
     }catch(error){
         console.log("Error while dealing with logincontroller : ",error);        
