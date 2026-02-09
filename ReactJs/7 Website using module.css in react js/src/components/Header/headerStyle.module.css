@@ -1,0 +1,28 @@
+.header {
+    height: 90px;
+    background-color: white;
+    padding: 15px;
+    color:#234567;
+    top:0;
+    position: sticky;
+    z-index: 1;
+}
+
+.logo {
+    height: 90px;
+    width: 100px;
+}
+
+.heading {
+    position: absolute;
+    font-size: 32px;
+    margin-left: 20px;
+    margin-top: 27px;
+}
+.address{
+    height: 100%;
+    /* background-color: blue; */
+    width: 200px;
+    float: right;
+    margin-top: 9px;
+}
