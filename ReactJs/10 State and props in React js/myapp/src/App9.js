@@ -1,11 +1,11 @@
 import React from 'react';
 
 class MyComponent extends React.Component{
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     // console.log("Inside Constructor ",this);
     this.state = {
-      name : this.props.name
+      name : "Andrew Anderson"
     }
   }
   render(){
@@ -16,7 +16,7 @@ class MyComponent extends React.Component{
 }
 function App() {
   return (<>
-    <MyComponent name="Peter Parker"/>
+    <MyComponent/>
   </>);
 }
 
