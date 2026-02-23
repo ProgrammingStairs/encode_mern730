@@ -7,12 +7,6 @@ class MyComponent extends React.Component{
     password : "",
     obj:{}
   }
-  getData = (event)=>{
-    var {name,value} = event.target;
-    // console.log("name : "+name);
-    // console.log("value : "+value);
-    this.state[name] = value;
-  }
   printData=()=>{
     this.setState({
       obj:
@@ -27,23 +21,24 @@ class MyComponent extends React.Component{
     return(<>
       <input
         type='text'
-        name="name"
         placeholder='Enter Name'
-        onChange={this.getData}
+        onChange={(event)=>{
+          this.setState({name:event.target.value});
+        }}
       /><br/>
-
       <input
         type='email'
-        name="email"
         placeholder='Enter Email'
-        onChange={this.getData}
+        onChange={(event)=>{
+          this.setState({email:event.target.value});
+        }}
       /><br/> 
-
        <input
         type='password'
-        name="password"
         placeholder='Enter Password'
-        onChange={this.getData}
+        onChange={(event)=>{
+          this.setState({password:event.target.value});
+        }}
       /> <br/>
 
       <button onClick={this.printData}>Click While Finish Writing</button>
