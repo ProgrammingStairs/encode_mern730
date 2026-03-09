@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client'; 
 function MyComponent(){
     const[data,setData] = useState([]);
-    async function getData(){
-        try{
-            var response = await fetch("https://jsonplaceholder.typicode.com/posts");
-            var arr = await response.json();
-            setData(arr);
-        }catch(error){
-            console.log("Error occured : ",error);
-        }
+    function getData(){
+        fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(response=>response.json())
+            .then(arr=>{setData(arr)})
+                .catch((error)=>{
+                    console.log("Error occured : ",error);
+                })
     }
     useEffect(()=>{
         getData();
