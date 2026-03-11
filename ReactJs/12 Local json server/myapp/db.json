@@ -1,0 +1,46 @@
+{
+  "profile": [
+    {
+      "id": "ffde",
+      "username": "Andrew Anderson",
+      "email": "andrew@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "d564",
+      "username": "Gaurav Kothari",
+      "email": "gaurav@gmail.com",
+      "password": "234"
+    },
+    {
+      "id": "93f6",
+      "username": "dbuser",
+      "email": "user@gmail.com",
+      "password": "321"
+    },
+    {
+      "id": "6ca0",
+      "username": "Karan",
+      "email": "karangangwal005@gmail.com",
+      "password": "2222"
+    },
+    {
+      "id": "3612",
+      "username": "Andrew Anderson",
+      "email": "andrewnew@gmail.com",
+      "password": "2323232323"
+    },
+    {
+      "id": "dcc0",
+      "username": "dbuser",
+      "email": "admin@gmail.com",
+      "password": "111"
+    },
+    {
+      "id": "59dd",
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "121"
+    }
+  ]
+}

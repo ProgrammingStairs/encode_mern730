@@ -4,7 +4,7 @@ function MyComponent(){
     const[data,setData] = useState([]);
     async function getData(){
         try{
-            var response = await fetch('data.json');
+            var response = await fetch("https://jsonplaceholder.typicode.com/posts");
             var arr = await response.json();
             setData(arr);
         }catch(error){
