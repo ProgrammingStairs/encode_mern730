@@ -21,6 +21,11 @@ function NavbarComponent() {
                     <Link to='/' style={{ color: "white", textDecoration: "none", fontSize: "20px" }}>Home</Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <Link to='/login' style={{ color: "white", textDecoration: "none", fontSize: "20px" }}>Login</Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>);
+            }else if (navShow == "profile") {
+                setMenuItem(<div style={{ height: "40px", backgroundColor: "black", color: "white" }}>
+                    <Link to='/profile' style={{ color: "white", textDecoration: "none", fontSize: "20px" }}>Home</Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Link to='/logout' style={{ color: "white", textDecoration: "none", fontSize: "20px" }}>Logout</Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>);
             }
         }, 200);
         return () => clearInterval(timer);

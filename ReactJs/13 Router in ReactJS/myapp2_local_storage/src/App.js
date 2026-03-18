@@ -19,6 +19,7 @@ function App() {
         <Route path='/login' element={<LoginComponent/>}/>
         <Route path='/register' element={<RegisterComponent/>}/>
         <Route path='/profile' element={<ProfileComponent/>}/>
+        <Route path='/logout' element={<LoginComponent/>}/>
       </Routes>
     </Router>
   </>);
