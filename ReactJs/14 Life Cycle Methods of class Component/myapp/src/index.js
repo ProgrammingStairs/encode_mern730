@@ -1,48 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.getElementById("div1").innerHTML =
+    "Before the update, the favorite was " + prevState.favoritecolor;
+  }
+  componentDidUpdate() {
+    document.getElementById("div2").innerHTML =
+    "The updated favorite is " + this.state.favoritecolor;
+  }
+  render() {
+    return (
+      <div>
+        <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+        <div id="div1"></div>
+        <div id="div2"></div>
+      </div>
+    );
+  }}
 
-function ExampleComponent() {
-  const [count, setCount] = useState(0);
-
-  // Runs once on mount
-  useEffect(() => {
-    console.log('Component mounted!');
-  }, []);
-
-  // Runs on every count change
-  useEffect(() => {
-    console.log(`Count changed to: ${count}`);
-  }, [count]);
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      console.log('Component will unmount');
-    };
-  }, []);
-
-  return (
-    <div>
-      <h3>Example Component</h3>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
-  );
-}
-
-function App() {
-  const [show, setShow] = useState(true);
-
-  return (
-    <div>
-      <button onClick={() => setShow(!show)}>
-        Toggle Component
-      </button>
-
-      {show && <ExampleComponent />}
-    </div>
-  );
-}
-
-const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+createRoot(document.getElementById("root")).render(<Header/>);
