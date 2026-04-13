@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+}
+#header{
+    height: 100px;
+    background-color: #234567;
+    color:white;
+}
+#box{
+    width: 100%;
+}
+#leftSection{
+    float: left;
+    width: 25%;
+    background-color: black;
+    height: 525px;
+}
+#leftSection p,blockquote label{
+    color:white;
+    font-size: 30px;
+}
+#rightSection{
+    float: left;
+    width: 75%;
+    background-color: grey;
+    height: 525px;
+}
+button{
+    border-radius: 20px;
+    height: auto;
+    background-color: white;
+    color:#234567;
+    width: auto;
+    padding: 7px 14px;
+    border-width: 0px;
+    font-size: 18px;
+}
+input{
+    border-radius: 10px;
+    height: 35px;
+    background-color: white;
+    color:#234567;
+    width: 350px;
+    border-width: 0px;
+    font-size: 18px;
+}
+#footer{
+    height:30px;
+    padding: 30px;
+    background-color: red;
+}
