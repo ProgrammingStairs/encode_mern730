@@ -13,7 +13,7 @@ dotenv.config();
 var app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(expressSession({SECRET : process.env.SECRET,resave:true,saveUninitialized:true}));
+app.use(expressSession({secret : process.env.SECRET,resave:true,saveUninitialized:true}));
 app.use(cookieParser());
 
 app.use('/tpo',tpoRouter);
